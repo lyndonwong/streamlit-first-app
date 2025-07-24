@@ -83,4 +83,28 @@ st.caption("Map data is generated randomly, so it will change every time you ref
 st.subheader("Lat Lon data table for above map")
 st.dataframe(map_data)
 
+# add some cool widgets
+st.header("Cool Widgets")   
+
+st.text_input("What is your name?", "Type here...", key="name_input")
+guest_name = st.session_state.name_input
+st.write(f"Hello {guest_name}, welcome to my first streamlit app!") 
+
+st.subheader("Mood Selector")
+scale = 100
+start = 0
+default = 50
+st.write(f'How do you feel today? (0 = sad, {scale} = happy)') 
+x = st.slider('Set the sliding scale:', start, scale, default)
+st.write(f'{guest_name}, your mood is: {x} out of {scale}')
+
+st.subheader("Pet Survey")
+x = st.selectbox('What makes the best family pet?', ['Budgie', 'Cat', 'Hamster', 'Dog', 'Goldfish'])
+st.write(f'The best pet is a {x}')    
+
+st.subheader("Number Squarer")  
+x = st.slider('x')
+st.write(x, 'squared is', x * x)
+
+
 
