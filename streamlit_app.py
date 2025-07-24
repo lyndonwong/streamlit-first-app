@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.title("🎈 Lyndon's first streamlit app in the cloud!")
+st.title("🎈 Lyndon's hello streamlit app!")
 st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+    "v2 adds various widgets and interactive elements. "
 )
 
 ## Create a sample DataFrame with latitude and longitude values
@@ -71,6 +71,13 @@ st.line_chart(chart_data)
 st.text("Data table for above chart")
 st.dataframe(chart_data)
 
+# display table conditionally based on a checkbox
+if st.checkbox('Show data table'):
+    st.subheader("Conditional Data table for above chart")
+    st.dataframe(chart_data)  
+
+
+
 # Plot a map
 st.subheader("Map Plot")
 map_data = pd.DataFrame(
@@ -86,6 +93,7 @@ st.dataframe(map_data)
 # add some cool widgets
 st.header("Cool Widgets")   
 
+# Collect and store visitor's name in session state 
 st.text_input("What is your name?", "Type here...", key="name_input")
 guest_name = st.session_state.name_input
 st.write(f"Hello {guest_name}, welcome to my first streamlit app!") 
@@ -96,6 +104,7 @@ start = 0
 default = 50
 st.write(f'How do you feel today? (0 = sad, {scale} = happy)') 
 x = st.slider('Set the sliding scale:', start, scale, default)
+# Address visitor by name and share their mood
 st.write(f'{guest_name}, your mood is: {x} out of {scale}')
 
 st.subheader("Pet Survey")
@@ -106,5 +115,27 @@ st.subheader("Number Squarer")
 x = st.slider('x')
 st.write(x, 'squared is', x * x)
 
+# Add some checkboxes
+st.subheader("Reveal the table with a checkbox")
+
+if st.checkbox('Check box to show dataframe'):
+    chart_data = pd.DataFrame(
+       np.random.randn(20, 3),
+       columns=['a', 'b', 'c'])
+
+    st.caption("Your check is my command!")
+    st.dataframe(chart_data)
+
+# Try selectbox widget
+st.subheader("Pick your potion below")
+df = pd.DataFrame({
+    'drink_type': ['Coffee', 'Tea', 'Coke', 'Juice'],
+    'second column': [10, 20, 30, 40]
+})
+option = st.selectbox(
+    'Which drink do you like best?',
+    df['drink_type'])     
+
+st.write(f"**I must agree, {option} is a superlative potion!**")
 
 
