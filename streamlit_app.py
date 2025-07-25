@@ -136,6 +136,6 @@ option = st.selectbox(
     'Which drink do you like best?',
     df['drink_type'])     
 
-st.write(f"**I must agree, {option} is a superlative potion!**")
+st.write(f"**I must agree, {option} is a nice drink!**")
 
 
