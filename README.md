@@ -1,19 +1,16 @@
-# 🎈 Blank app template
+# 🎈 Streamlit Hello World
 
-A simple Streamlit app template for you to modify!
+A simple Streamlit app that uses various Streamlit features from the main-concepts tutorial:
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+https://docs.streamlit.io/get-started/fundamentals/main-concepts
 
-### How to run it on your own machine
+### App hosted on the Streamlit Community Cloud, at:
+https://lyndon-first-app.streamlit.app/
 
-1. Install the requirements
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://lyndon-first-app.streamlit.app/)
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+### How to run on Streamlit Community Cloud
 
-2. Run the app
+https://docs.streamlit.io/get-started/installation/community-cloud
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+
